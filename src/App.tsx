@@ -1,15 +1,13 @@
 import React, { useState } from "react";
 import "./App.css";
 
-
-const countUp = (color: string) => {
-  alert(color);
-}
-
 const Counter = (props: { color: string }) => {
-  const [count, setCount] = useState(10);
+  const [count, setCount] = useState(0);
+
+  const countUp = () => setCount((prevCount) => prevCount + 1);
+
   return (
-    <li style={{ backgroundColor: props.color }} onClick={() => countUp(props.color)}>
+    <li style={{ backgroundColor: props.color }} onClick={() => countUp()}>
       {count}
     </li>
   );
@@ -24,6 +22,7 @@ function App() {
         <Counter color="skyblue" />
         <Counter color="limegreen" />
       </ul>
+      <div>TOTAL INVENTORY: 3</div>
     </div>
   );
 }
