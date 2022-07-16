@@ -11,13 +11,16 @@ const Counter = (props: { color: string }) => {
       {count}
     </li>
   );
-}
+};
 
-
-function App() {
+const AppBase = () => {
+  // const counters
   return (
     <div className="container">
       <ul>
+        {/* <Counter color="tomato" />
+        <Counter color="skyblue" />
+        <Counter color="limegreen" /> */}
         <Counter color="tomato" />
         <Counter color="skyblue" />
         <Counter color="limegreen" />
@@ -25,6 +28,10 @@ function App() {
       <div>TOTAL INVENTORY: 3</div>
     </div>
   );
+};
+
+function App() {
+  return <AppBase />;
 }
 
 export default App;
