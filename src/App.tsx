@@ -1,37 +1,35 @@
 import React, { useState } from "react";
 import "./App.css";
+// rewriting react-inventory-dot
+const App = () => {
+  const Counter = (props: { color: string }) => {
+    const [count, setCount] = useState(0);
 
-const Counter = (props: { color: string }) => {
-  const [count, setCount] = useState(0);
+    const countUp = () => setCount((prevCount) => prevCount + 1);
 
-  const countUp = () => setCount((prevCount) => prevCount + 1);
+    return (
+      <li style={{ backgroundColor: props.color }} onClick={() => countUp()}>
+        {count}
+      </li>
+    );
+  };
 
   return (
-    <li style={{ backgroundColor: props.color }} onClick={() => countUp()}>
-      {count}
-    </li>
-  );
-};
-
-const AppBase = () => {
-  // const counters
-  return (
-    <div className="container">
-      <ul>
-        {/* <Counter color="tomato" />
-        <Counter color="skyblue" />
-        <Counter color="limegreen" /> */}
-        <Counter color="tomato" />
-        <Counter color="skyblue" />
-        <Counter color="limegreen" />
-      </ul>
-      <div>TOTAL INVENTORY: 3</div>
+    <div className="App">
+      <div className="container">
+        <ul className="inventoryList">
+          {counters.map((counter) => (
+            <li key={counter.id}>
+              <div>
+                
+              </div>
+            </li>
+          ))}
+        </ul>
+        <div>TOTAL INVENTORY: 3</div>
+      </div>
     </div>
   );
 };
-
-function App() {
-  return <AppBase />;
-}
 
 export default App;

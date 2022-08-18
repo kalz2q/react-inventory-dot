@@ -1,3 +1,8 @@
+body {
+  font-size: 16px;
+  font-family: Verdana, sans-serif;
+}
+
 .container {
   width: 330px;
   margin: 20px auto;
