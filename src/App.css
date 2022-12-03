@@ -1,3 +1,14 @@
+body {
+  font-size: 16px;
+  font-family: Verdana, sans-serif;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: tomato;
+}
+
 .container {
   width: 330px;
   margin: 20px auto;
@@ -18,13 +29,13 @@
   text-align: center;
   cursor: pointer;
   user-select: none;
-  border-radius: 50%;
+  border-radius: 5px;
   margin: 0 5px 10px;
 }
 
 .container div {
   text-align: right;
   padding: 5px;
-  font-size: 15px;
+  font-size: 12px;
   font-weight: bold;
 }
