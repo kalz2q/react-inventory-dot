@@ -2,10 +2,12 @@
 
 元記事は dotinstall のどこなのか?
 
-元記事 【 React Hooks入門】useStateを使って買い物リストを作るチュートリアル
+元記事 【 React Hooks 入門】useState を使って買い物リストを作るチュートリアル
 react+typescript
-totalのあるプログラム => shopping list
+total のあるプログラム => shopping list
 
-元記事 dotinstallのreact入門が名前はcounterだが在庫管理プログラムで、過去にreact-inventory-dotで作り始めている。!!!!
+元記事 dotinstall の react 入門が名前は counter だが在庫管理プログラムで、過去に react-inventory-dot で作り始めている。!!!!
 
 どちらが近いか?
+
+react 入門
