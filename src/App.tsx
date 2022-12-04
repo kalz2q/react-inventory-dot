@@ -8,12 +8,12 @@ const App = () => {
     <div className="App">
       <h1>hello, {name.toUpperCase()}</h1>
       <hr />
-      <div className="box"></div>
+      <div className="container">
       <ul>
-        <li>a</li>
-        <li>b</li>
-        <li>c</li>
-      </ul>
+        <li className="tomato">a</li>
+        <li className="skyblue">b</li>
+        <li className="limegreen">c</li>
+      </ul></div>
     </div>
   );
 };
