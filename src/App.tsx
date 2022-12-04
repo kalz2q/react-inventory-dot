@@ -9,6 +9,11 @@ const App = () => {
       <h1>hello, {name.toUpperCase()}</h1>
       <hr />
       <div className="box"></div>
+      <ul>
+        <li>a</li>
+        <li>b</li>
+        <li>c</li>
+      </ul>
     </div>
   );
 };
