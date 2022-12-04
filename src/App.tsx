@@ -3,10 +3,11 @@ import './App.css';
 const App = () => {
   //itemのuseStateを作る
   //初期状態は空のオブジェクトでOK
-  const [items, setItems] = useState([]);
+  const [items, setItems] = useState<[ItemType]>([{ itemName: "", quantity: 0, isSelected: false }]);
+
 
   // 型定義
-  type Item = {
+  type ItemType = {
     itemName: string,
     quantity: number,
     isSelected: boolean,
@@ -20,11 +21,10 @@ const App = () => {
   const [totalItemCount, setTotalItemCount] = useState(0);
 
   const calculateTotal = () => {
-    // const totalItemCount = items.reduce((total, item) => {
-    //   // console.log(total)
-    //   return total + item.quantity;
-    // }, 0);
-    const totalItemCount = items[0].quantity;
+    const totalItemCount = items.reduce((total, item) => {
+      // console.log(total)
+      return total + item.quantity;
+    }, 0);
 
     setTotalItemCount(totalItemCount);
   };
