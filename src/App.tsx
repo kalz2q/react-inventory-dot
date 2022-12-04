@@ -1,56 +1,46 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './App.css';
-const App = () => {
-  //itemのuseStateを作る
-  //初期状態は空のオブジェクトでOK
-  const [items, setItems] = useState<Item[]>([]);
+const { useState } = React;
 
+const App = () => {
+  const [inputValue, setInputValue] = useState("");
+  const [items, setItems] = useState<Item[]>([]);
+  const [totalItemCount, setTotalItemCount] = useState(0);
+
+  // id is not in the type. Is it Ok?
   type Item = {
     itemName: string,
     quantity: number,
     isSelected: boolean,
   };
 
-  //入力値のuseState作る
-  const [inputValue, setInputValue] = useState("");
-
-  //総量のuseStateを作る
-  //初期値は0
-  const [totalItemCount, setTotalItemCount] = useState(0);
-
   const calculateTotal = () => {
     const totalItemCount = items.reduce((total, item) => {
-      // console.log(total)
       return total + item.quantity;
     }, 0);
 
     setTotalItemCount(totalItemCount);
   };
 
-  //クリック時にitems配列に新しいitemを作る処理
-  const handleAddButtonClick = () => {
-    //作られるitemの定義
+  const handleAddButtonClick = (e: any) => {
+    e.preventDefault();
     const newItem = {
       itemName: inputValue,
       quantity: 1,
       isSelected: false,
     };
 
-    //items配列にpushされる
     const newItems = [...items, newItem];
 
-    //useStateのitemsに反映
     setItems(newItems);
 
-    //入力値を空に
     setInputValue("");
-    console.log(items);
 
     calculateTotal();
-    console.log(items);
   };
 
   //done切り替え
+  // いまここ
   const toggleComplete = (index: number) => {
     //itemsを展開した配列、newItemsを作る
     const newItems = [...items];
@@ -84,19 +74,17 @@ const App = () => {
     <div className="app-background">
       <div className="main-container">
         <div className="add-item-box">
-          {/* inputValueにクリック時の入力値を与える */}
-          <input
-            value={inputValue}
-            onChange={(event) => setInputValue(event.target.value)}
-            className="add-item-input"
-            placeholder="Add an item..."
-          />
-          {/* プラスアイコンでhandleAddButtonClickを発火 */}
-          {/* <FontAwesomeIcon
-            icon={faPlus}
-            onClick={() => handleAddButtonClick()}
-          /> */}
-          <button onClick={() => handleAddButtonClick()}> 追加</button>
+          <form onSubmit={(e) => handleAddButtonClick(e)}>
+            <input
+              value={inputValue}
+              onChange={(event) => setInputValue(event.target.value)}
+              autoFocus
+              className="add-item-input"
+              placeholder="追加する品目を入れて下さい"
+            />
+            <input type="submit" value="+" className="submitButton" />
+          </form>
+
         </div>
         <div className="item-list">
           {/* mapを使ってitems配列をitemのループで出力する */}

@@ -6,10 +6,13 @@ How to Build a Shopping List Using React Hooks (w/ Starter Code and Video Walkth
 の翻訳
 
 => とりあえず動いた。 05-temp-working.tsx.txt
-1. done, checkの動きがわからない
-2. done, checkをcheckboxにしたい
+
+1. done, check の動きがわからない
+2. done, check を checkbox にしたい
 3. - 4? + のクエスチョンマークが何か?
-4. 追加、をsubmit button に出来ないか
+4. 追加、を submit button に出来ないか
+   autofocus はそれだけで autofocus
+   enter で submit にしたい cf.react-todo-shin
 
 ---
 
