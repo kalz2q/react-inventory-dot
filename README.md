@@ -3,7 +3,13 @@
 次に 【 React Hooks 入門】useState を使って買い物リストを作るチュートリアル
 をやってみる。
 How to Build a Shopping List Using React Hooks (w/ Starter Code and Video Walkthrough)
-の翻訳で、元の方がわかりやすいかもしれない。
+の翻訳
+
+=> とりあえず動いた。 05-temp-working.tsx.txt
+1. done, checkの動きがわからない
+2. done, checkをcheckboxにしたい
+3. - 4? + のクエスチョンマークが何か?
+4. 追加、をsubmit button に出来ないか
 
 ---
 
