@@ -1,5 +1,23 @@
 # react-inventory-dot
 
+useEffect(() => {
+calculateTotal()
+});
+で云々。
+
+---
+
+=> 自動で total を計算するのは useState だけでは無理なので他の hook を考える
+とりあえず shin の #プログラミング #入門 #javascript
+【React Hooks 入門】完全初心者 OK！8 種類の Hooks を学んで React の理解を深めよう
+を見る
+
+useReducer total react =>
+useReducer フック活用法 - Qiitahttps://qiita.com › JavaScript
+2018/12/17 — これは配列の各要素ごとに関数を呼び出して、前の total と現在の要素の number ... import React, { useReducer } from 'react'; function Counter() ...
+
+---
+
 買い物リスト
 今の状態ではバグが解消されない。
 setItems(newItems)で items が最新かされているはずなのに items を console.log するとされてなく見える状態。
@@ -10,12 +28,8 @@ setItems(newItems)で items が最新かされているはずなのに items を
 
 => index をやめて、item.id にしたが解決しない。
 
-cf. Using react-hooks find total and print average 
+cf. Using react-hooks find total and print average
 stackoverflow
-
-
-
-
 
 ---
 
