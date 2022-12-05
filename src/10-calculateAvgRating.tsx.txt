@@ -68,7 +68,7 @@ function App() {
           <input name="fitness" onChange={onChange} />
         </div>
         <button type="submit" className="submitButton" onClick={() => calculateAvgRating(rating)}>
-          submit
+          Submit
         </button>
       </div>
     </div>

@@ -1,0 +1,132 @@
+import React from 'react';
+import './App.css';
+const { useState } = React;
+
+const App = () => {
+  const [inputValue, setInputValue] = useState("");
+  const [items, setItems] = useState<Item[]>([]);
+  const [totalItemCount, setTotalItemCount] = useState(0);
+
+  // ilets add id
+  type Item = {
+    id: number,
+    itemName: string,
+    quantity: number,
+    isSelected: boolean,
+  };
+
+  const calculateTotal = () => {
+    const totalItemCount = items.reduce((total, item) => {
+      return total + item.quantity;
+    }, 0);
+
+    setTotalItemCount(totalItemCount);
+    console.log(items);
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setInputValue(e.target.value);
+  };
+
+
+  const handleAddButtonClick = (e: any) => {
+    e.preventDefault();
+    const newItem = {
+      id: items.length,
+      itemName: inputValue,
+      quantity: 1,
+      isSelected: false,
+    };
+
+    setItems([...items, newItem]);
+    setInputValue("");
+    calculateTotal();
+  };
+
+  //done切り替え
+  // いまここ
+  const toggleComplete = (index: number) => {
+    //itemsを展開した配列、newItemsを作る
+    const newItems = [...items];
+    //引数にindexから、該当するitemのisSelectedを切り替える
+    newItems[index].isSelected = !newItems[index].isSelected;
+
+    setItems(newItems);
+  };
+
+  // const handleChecked = (index: number, checked: boolean) => {
+  // const newItems = [...items];
+  // if (checked) { newItems[index].isSelected = true } else { newItems[index].isSelected = false };
+
+  // setItems(newItems);
+  // };
+
+  const handleQuantityDecrease = (index: number) => {
+    //itemsを展開した配列、newItemsを作る
+    const newItems = [...items];
+    //quantityに-1する
+    newItems[index].quantity--;
+    setItems(newItems);
+    //総量更新
+    calculateTotal();
+  };
+
+  const handleQuantityIncrease = (index: number) => {
+    //itemsを展開した配列、newItemsを作る
+    const newItems = [...items];
+    //quantityに+1する
+    newItems[index].quantity++;
+    setItems(newItems);
+    //総量更新
+    calculateTotal();
+  };
+
+  return (
+    <div className="app-background">
+      <div className="main-container">
+        <h4>買い物リスト 数量入り</h4>
+        <div className="add-item-box">
+          <form onSubmit={(event) => handleAddButtonClick(event)}>
+            <input
+              value={inputValue}
+              onChange={(event) => handleChange(event)}
+              autoFocus
+              className="add-item-input"
+              placeholder="追加する品目を入力して下さい"
+            />
+            <input type="submit" value="+" className="submitButton" />
+          </form>
+
+        </div>
+        <div className="item-list">
+          {items.map((item) => (
+            <div key={item.id} className="item-container">
+              {/* toggleCompleteにindexを渡す事で、そのitemのisSelected切り替える。 */}
+              <div className="item-name" onClick={() => toggleComplete(item.id)}>
+                <input
+                  type="checkbox"
+                  // checked={items[item.id].isSelected}
+                  defaultChecked
+                // onChange={(e) => handleChecked(items[item.id].isSelected, e.target.checked)}
+                />
+                {item.isSelected ? (
+                  <span className="completed">{item.itemName}</span>
+                ) : (
+                  <span>{item.itemName}</span>
+                )}
+
+              </div>
+              <div className="quantity">
+                <button onClick={() => handleQuantityDecrease(item.id)}>-</button>
+                <span> {item.quantity} </span>
+                <button onClick={() => handleQuantityIncrease(item.id)}>+</button>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="total">Total:{totalItemCount}</div>
+      </div>
+    </div >
+  );
+};
+export default App;

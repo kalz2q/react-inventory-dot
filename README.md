@@ -1,5 +1,33 @@
 # react-inventory-dot
 
+買い物リスト
+今の状態ではバグが解消されない。
+setItems(newItems)で items が最新かされているはずなのに items を console.log するとされてなく見える状態。
+
+一方で warning で key を設定せよ。とある。
+あと、このプログラムは index を使っているのが気になる。
+この辺から解決しようか。
+
+=> index をやめて、item.id にしたが解決しない。
+
+cf. Using react-hooks find total and print average 
+stackoverflow
+
+
+
+
+
+---
+
+買い物リスト
+08-finished.tsx のバグ
+入力時に total がカウントされない。
+大元の記事では既にデータが入っている状態から始まっていた。
+これはごまかしか?
+いや。その状態からでも item を足して今の私のバージョンでは 1 が加わらない。
+
+---
+
 次に 【 React Hooks 入門】useState を使って買い物リストを作るチュートリアル
 をやってみる。
 How to Build a Shopping List Using React Hooks (w/ Starter Code and Video Walkthrough)
