@@ -1,6 +1,9 @@
 # react-inventory-dot
 
-買い物リスト数量入りはオッケーだったので、元のdotinstallのreact入門に戻れるのではないか。
+買い物リスト数量入りはオッケーだったので、元の dotinstall の react 入門に戻れるのではないか。
+memo: the quick, lazy but effective way to create unique keys for React elements
+
+json array javascript
 
 ---
 
