@@ -1,5 +1,9 @@
 # react-inventory-dot
 
+買い物リスト数量入りはオッケーだったので、元のdotinstallのreact入門に戻れるのではないか。
+
+---
+
 useEffect(() => {
 calculateTotal()
 });
