@@ -30,9 +30,6 @@ const App = () => {
   };
 
   const countUp = (id: number) => {
-    // const newColors = [...colors];
-    // newColors[id].number++;
-    // setColors(newColors);
     const newColors = colors.map((color) => {
       if (color["id"] === id) {
         color.number++;
@@ -51,11 +48,12 @@ const App = () => {
           {colors.map((color) => {
             return (
               <li key={color["id"]} style={{ backgroundColor: color["color"] }} onClick={() => countUp(color["id"])}>
-                {color.number}
+                {color.color}:{color.number}
               </li>
             );
           })}
         </ul>
+        <div>Total Inventory: 3</div>
       </div>
     </div>
   );
