@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-// react-inventory-dot
+// simplify to study the css
 const { useState } = React;
 
 const App = () => {

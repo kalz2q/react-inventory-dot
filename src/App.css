@@ -1,15 +1,7 @@
-/* stylelint-disable comment-empty-line-before */
-/* stylelint-disable-next-line selector-class-pattern */
 .App {
   text-align: center;
-  /* display: flex; */
-  /* align-items: center; */
-  /* justify-content: center; */
   color: black;
   background-color: gray;
-  /* margin: 50px; */
-  /* position: relative; */
-  /* transform: scale(0.5); */
 }
 
 .container {
